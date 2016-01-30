@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Person Picker Example</title>
+
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.tokeninput.js"></script>
+    <link rel="stylesheet" href="styles/token-input.css" type="text/css" />
+
+</head>
+<body>
+
+   
+    <div>
+        <input type="text" id="demo-input" name="blah" />
+        <input type="button" value="Submit" />
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //uri to api/controller/action
+                var uri = 'api/picker/GetPerson';
+                //select dom element that will be the picker
+                $("#demo-input").tokenInput(uri);
+
+
+
+
+                //capture values of picker on button click
+                $("input[type=button]").click(function () {
+                    alert("Would submit: " + $(this).siblings("input[type=text]").val());
+                });
+
+
+            });
+        </script>
+    </div>
+
+
+
+</body>
+</html>
